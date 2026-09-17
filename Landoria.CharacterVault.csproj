@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+          Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
+    <ProjectGuid>{70BCF48B-1C23-4B2A-8A4F-F01CC21E3EC5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Landoria.CharacterVault</RootNamespace>
+    <AssemblyName>Landoria.CharacterVault</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="BepInEx"><HintPath>$(BepInExPath)\core\BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(BepInExPath)\core\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="assembly_valheim"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\assembly_valheim.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="assembly_utils"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\assembly_utils.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="PlayFab"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\PlayFab.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="PlayFabParty"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\PlayFabParty.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Splatform"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\Splatform.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UIModule"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\UnityEngine.UIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.TextMeshPro"><HintPath>$(ValheimGamePath)\valheim_Data\Managed\Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CharacterVaultSettings.cs" />
+    <Compile Include="CharacterRestoreApi.cs" />
+    <Compile Include="CharacterVaultArgumentPolicy.cs" />
+    <Compile Include="CharacterAdmissionPolicy.cs" />
+    <Compile Include="CharacterVaultRejection.cs" />
+    <Compile Include="CharacterRejectionMessageState.cs" />
+    <Compile Include="CharacterSaveStatusDisplay.cs" />
+    <Compile Include="ClientSaveLifecycle.cs" />
+    <Compile Include="ServerFinalSaveMonitor.cs" />
+    <Compile Include="NewCharacterPolicy.cs" />
+    <Compile Include="ProfileFile.cs" />
+    <Compile Include="SaveApiCompatibility.cs" />
+    <Compile Include="SaveStatusLifecycle.cs" />
+    <Compile Include="ProfileTransferModels.cs" />
+    <Compile Include="ProfileCommitQueue.cs" />
+    <Compile Include="ProfileTransferProtocol.cs" />
+    <Compile Include="ProfileTransferService.cs" />
+    <Compile Include="ProfileUploadValidator.cs" />
+    <Compile Include="BackupRetention.cs" />
+    <Compile Include="VaultStorage.cs" />
+    <Compile Include="GracefulShutdownCoordinator.cs" />
+    <Compile Include="GracefulShutdownApi.cs" />
+    <Compile Include="KickSavePolicy.cs" />
+    <Compile Include="VoluntaryDisconnectCoordinator.cs" />
+    <Compile Include="VoluntaryExitSavePolicy.cs" />
+    <Compile Include="WorldSavePolicy.cs" />
+    <Compile Include="StartingItemGrantPolicy.cs" />
+    <Compile Include="ServerDisconnectSaveCoordinator.cs" />
+    <Compile Include="ServerDisconnectApi.cs" />
+    <Compile Include="ProfileSaveRpc.cs" />
+    <Compile Include="PlayFabConnectionDiagnostics.cs" />
+    <Compile Include="PlayFabEndpointDiagnostics.cs" />
+    <Compile Include="PlayFabAckDiagnostics.cs" />
+    <Compile Include="PlayFabConnectionErrorMessages.cs" />
+    <Compile Include="PlayFabDisconnectDiagnostics.cs" />
+    <Compile Include="CharacterVaultPlugin.cs" />
+    <Compile Include="ConnectionFailureMessages.cs" />
+    <Compile Include="ServerRole.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.png" />
+    <Content Include="LICENSE" />
+    <Content Include="manifest.json" />
+    <Content Include="README.md" />
+
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
