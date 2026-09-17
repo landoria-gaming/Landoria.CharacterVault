@@ -1,7 +1,7 @@
 # CharacterVault
 
-Snapshot builds use LandoriaModActions@v4.3 and the shared private references.
-Requires MOD_REFERENCES_TOKEN. Runs on main only when both versions match X.Y.Z-snapshot.
+Snapshot builds use LandoriaModActions@v4.5 and the shared private references.
+Requires MOD_REFERENCES_TOKEN. All five versions must match; only manifest and informational version use -snapshot.
 
 CharacterVault keeps your Valheim character on the server. When you join, the
 server loads its trusted copy, preventing items from being imported or duplicated
