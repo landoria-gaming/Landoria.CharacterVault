@@ -1,0 +1,26 @@
+name: Snapshot build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: snapshot-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  snapshot:
+    permissions:
+      contents: write
+    uses: landoria-gaming/LandoriaModActions/.github/workflows/snapshot.yml@v4.3
+    with:
+      project-file: Landoria.CharacterVault.csproj
+      mod-name: Landoria.CharacterVault
+      package-name: CharacterVault
+    secrets:
+      references-token: ${{ secrets.MOD_REFERENCES_TOKEN }}
