@@ -1,7 +1,5 @@
 # CharacterVault
 
-Requires MOD_REFERENCES_TOKEN. All five versions must match; only manifest and informational version use -snapshot.
-
 CharacterVault keeps your Valheim character on the server. When you join, the
 server loads its trusted copy, preventing items from being imported or duplicated
 with another save or a restored backup.
@@ -46,10 +44,6 @@ Most of Landoria mods need to be installed also on the dedicated server, we show
 | Client required | Server required (dedicated) | Player-hosted server |
 |---|---|---|
 | Yes | Yes | Not Supported |
-
-## Valheim compatibility
-
-Current release: 1.0.x
 
 ## Server configuration
 
