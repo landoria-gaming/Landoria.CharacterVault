@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.30
+
+- Use latest BepInEx version 5.4.2351
+
 ## 1.0.29
 
 - Migration to Valheim 1.0.x.
