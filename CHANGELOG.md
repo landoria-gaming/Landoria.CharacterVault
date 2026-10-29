@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.31
+
+- Updated to BepInExPack_Valheim-5.4.2360
+
 ## 1.0.30
 
 - Use latest BepInEx version 5.4.2351

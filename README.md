@@ -8,12 +8,12 @@ with another save or a restored backup.
 
 - The server loads its latest trusted copy before your character enters the world; local saves still work normally.
 - A status below the minimap shows when the character is saving and confirms when the save is complete.
-- The server keeps up to 15 automatic backups per character.
+- The server keeps the 5 most recent backups and up to 10 older daily backups per character.
 - CharacterVault requires a new character when joining a server for the first time.
-- A server integration can restore the latest compatible backup when no local server profile exists.
+- A server-side restore provider can supply a compatible profile when no local server profile exists.
 - CharacterVault supports crossplay servers.
 
-Server-side mods can provide a verified character when it is not yet present on the current world. See the
+Server-side mods can provide a verified character when it is not yet stored on this server. See the
 [character restore provider integration guide](CHARACTER_RESTORE_PROVIDER.md).
 
 ## When characters are saved
@@ -22,11 +22,11 @@ Characters are saved:
 
 - after their first enrollment;
 - during automatic and manual saves;
-- when the player logs out, quits, or is disconnected by the server;
+- when the player logs out or quits, and before a server-initiated disconnect when the client can still respond;
 - before a graceful server stop or restart (when configured on the server).
 
-Characters are not saved after a client crash or network loss because the
-connection is already unavailable.
+The final save cannot be guaranteed if the client does not respond, including
+after a crash or network loss.
 
 ## Installation
 

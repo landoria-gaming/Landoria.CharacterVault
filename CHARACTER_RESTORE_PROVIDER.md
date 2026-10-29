@@ -1,6 +1,6 @@
 # Character restore provider integration
 
-A server-side mod can provide a CharacterVault-verified character when that character is not yet stored on the current server. This allows the same verified character to be used across several worlds.
+A server-side mod can provide a CharacterVault-verified character when that character is not yet stored on the current server. A restore provider can make the same verified character available on several servers or worlds.
 
 CharacterVault calls the provider only when the character is missing from the server's local CharacterVault storage. It never replaces an existing local profile.
 
